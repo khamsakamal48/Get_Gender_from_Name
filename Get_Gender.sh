@@ -18,7 +18,7 @@ likelyGender=$(jq -r '.likelyGender' Name_Output.json)
 genderScale=$(jq -r '.genderScale' Name_Output.json)
 score=$(jq -r '.score' Name_Output.json)
 probabilityCalibrated=$(jq -r '.probabilityCalibrated' Name_Output.json)
-echo "$key,$number_orig,$valid,$number,$local_format,$international_format,$country_prefix,$country_code,$country_name,$location,$carrier,$line_type" >> Name_Final.csv;
+echo "$key,$id,$firstName,$lastName,$likelyGender,$genderScale,$score,$probabilityCalibrated" >> Name_Final.csv;
 
 tail -n 1 Names_List.csv >> Names_Completed.csv;
 #Remove the last line from CSV file
