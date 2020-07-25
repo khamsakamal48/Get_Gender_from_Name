@@ -37,7 +37,7 @@ case $length in
     touch Names_Completed.csv;
 
     #Count the names to process
-    name_count=$(cat Name_List.csv | wc -l)
+    name_count=$(cat Names_List.csv | wc -l)
 
     if [[ "$name_count" -le 5000 ]]; then
       echo "You can process all the names";
