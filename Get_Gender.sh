@@ -11,13 +11,13 @@ last_name=$(jq -r '.last' Name.json)
 #Get Gender
 curl -X GET "https://v2.namsor.com/NamSorAPIv2/api2/json/gender/${first_name}/${last_name}" -H "accept: application/json" -H "X-API-KEY: ${key}" 2>&1 | tee Name_Output.json;
 
-id=$(jq -r '.id' Number_Verify_Output.json)
-firstName=$(jq -r '.firstName' Number_Verify_Output.json)
-lastName=$(jq -r '.lastName' Number_Verify_Output.json)
-likelyGender=$(jq -r '.likelyGender' Number_Verify_Output.json)
-genderScale=$(jq -r '.genderScale' Number_Verify_Output.json)
-score=$(jq -r '.score' Number_Verify_Output.json)
-probabilityCalibrated=$(jq -r '.probabilityCalibrated' Number_Verify_Output.json)
+id=$(jq -r '.id' Name_Output.json)
+firstName=$(jq -r '.firstName' Name_Output.json)
+lastName=$(jq -r '.lastName' Name_Output.json)
+likelyGender=$(jq -r '.likelyGender' Name_Output.json)
+genderScale=$(jq -r '.genderScale' Name_Output.json)
+score=$(jq -r '.score' Name_Output.json)
+probabilityCalibrated=$(jq -r '.probabilityCalibrated' Name_Output.json)
 echo "$key,$number_orig,$valid,$number,$local_format,$international_format,$country_prefix,$country_code,$country_name,$location,$carrier,$line_type" >> Name_Final.csv;
 
 tail -n 1 Names_List.csv >> Names_Completed.csv;
