@@ -9,7 +9,7 @@ first_name=$(jq -r '.first' Name.json)
 last_name=$(jq -r '.last' Name.json)
 
 #Get Gender
-curl -X GET "https://v2.namsor.com/NamSorAPIv2/api2/json/gender/${first_name}/${last_name}" -H "accept: application/json" -H "X-API-KEY: ${key}" 2>&1 | tee Name_Output.json;
+curl -s -H "accept: application/json" -H "X-API-KEY: ${key}" --request GET "https://v2.namsor.com/NamSorAPIv2/api2/json/gender/${first_name}/${last_name}" > Name_Output_1.json && jq . Name_Output_1.json > Name_Output.json && rm -rf Name_Output_1.json;
 
 id=$(jq -r '.id' Name_Output.json)
 firstName=$(jq -r '.firstName' Name_Output.json)
