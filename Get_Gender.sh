@@ -23,3 +23,5 @@ echo "$key,$id,$firstName,$lastName,$likelyGender,$genderScale,$score,$probabili
 tail -n 1 Names_List.csv >> Names_Completed.csv;
 #Remove the last line from CSV file
 sed -i '$d' Names_List.csv;
+
+sleep 1;
