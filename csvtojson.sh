@@ -9,10 +9,6 @@ clear;
 rm -rf Name.json;
 rm -rf Names_New.csv;
 
-#Remove already processed lines from CSV
-join -v 1 -t, <(sort -t, Names_List.csv) <(sort Names_Completed.csv) > Names_Final.csv;
-mv Names_Final.csv Names_List.csv;
-
 #Create blank.csv file
 touch Names_New.csv;
 
