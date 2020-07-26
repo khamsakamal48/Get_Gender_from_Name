@@ -34,7 +34,7 @@ mv Names_New_1.csv Names_New.csv;
 a=$(cat Names_New.csv | wc -l)
 
 if [[ "$a" -eq 1 ]]; then
-  echo "No phone numbers to verify";
+  echo "No names to check";
 else
   #Convert CSV to JSON
   csvjson Names_New.csv > Name.json;
