@@ -33,6 +33,8 @@ case $length in
 
     rm -rf Names_Completed.csv;
     rm -rf Names_New.csv;
+    rm -rf Name_Final.csv;
+    cp -arf Name_Final.csv.orig Name_Final.csv; 
 
     touch Names_Completed.csv;
 
